@@ -1,4 +1,158 @@
 header {
-    width: 100%;
+  width: 100%;
+  height: auto;
+  position: relative;
+  background: #EDF3F8;
+
+  .header_bg {
+    position: absolute;
+    top: 0;
+    right: 0;
+    max-width: 1440px;
     height: auto;
+
+    .header_bg-ipad {
+      display: none;
+    }
+
+    .header_bg-mobile {
+      display: none;
+    }
+  }
+
+  .header_container {
+    .header_nav {
+      display: flex;
+      align-items: center;
+      padding: 40px 0;
+
+      .nav_list {
+        display: flex;
+        margin-left: 64px;
+
+        .nav_item {
+          &:not(:nth-child(1)) {
+            margin-left: 40px;
+          }
+
+          .nav_link {
+            color: #36536b;
+            font-family: Public Sans;
+            font-size: 15px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: normal;
+            opacity: 0.699999988079071;
+          }
+        }
+      }
+
+      .nav_btn {
+        @include btn;
+        margin-left: auto;
+      }
+
+      .nav_menu {
+        border: none;
+        background-color: transparent;
+        margin-left: auto;
+        display: none;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 648px) {
+  header {
+    .header_container {
+      .header_nav {
+        .nav_list {
+          margin-left: 0px;
+
+          .nav_item {
+            margin-left: 20px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  header {
+    .header_bg {
+      position: absolute;
+      top: 0;
+      right: 0;
+      max-width: 1440px;
+      height: auto;
+
+      .header_bg-desktop {
+        display: none;
+      }
+      .header_bg-ipad {
+        display: block;
+      }
+    }
+    .header_container {
+      .header_nav {
+        .nav_list {
+          margin-left: 0px;
+
+          .nav_item {
+            margin-left: 5px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 576px) {
+  header {
+    .header_container {
+      .header_nav {
+        .nav_list {
+          display: none;
+        }
+
+        .nav_btn {
+          display: none;
+        }
+
+        .nav_menu {
+          display: block;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 375px) {
+  header {
+    .header_bg {
+      position: absolute;
+      top: 0;
+      right: 0;
+      max-width: 1440px;
+      height: auto;
+      .header_bg-ipad {
+        display: none;
+      }
+      .header_bg-mobile {
+        display: block;
+      }
+    }
+    .header_container {
+      .header_nav {
+        .nav_list {
+          margin-left: 0px;
+
+          .nav_item {
+            margin-left: 20px;
+          }
+        }
+      }
+    }
+  }
 }
